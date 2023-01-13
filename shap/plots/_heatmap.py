@@ -45,7 +45,7 @@ def heatmap(shap_values, instance_order=Explanation.hclust(), feature_values=Exp
     """
 
     # sort the SHAP values matrix by rows and columns
-    values = shap_values.values
+    values = shap_values
     if issubclass(type(feature_values), OpChain):
         feature_values = feature_values.apply(Explanation(values))
     if issubclass(type(feature_values), Explanation):
